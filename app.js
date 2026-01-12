@@ -33,7 +33,7 @@ const App = {
 
     config: {
         supabaseUrl: 'https://ltmgutcrlswymfpxiisu.supabase.co',
-        supabaseKey: 'sb_publishable_Zv7-goAtl4OOr9HiCL2xOQ_a9G7JCgF',
+        supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0bWd1dGNybHN3eW1mcHhpaXN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgxODYwMDQsImV4cCI6MjA4Mzc2MjAwNH0._QT-Br0x5Prli3jiD_bf-UoprH21Q1EzeobNwIfNQ-U',
         hourlyWage: 1750,
         jsonPath: 'data/db.json'
     },
