@@ -67,16 +67,18 @@ const App = {
         try {
             // Priority: Supabase > LocalStorage > initialData
             if (this.supabase) {
-                const { data, error } = await this.supabase.from('portal_data').select('data').single();
+                const { data, error } = await this.supabase
+                    .from('portal_data')
+                    .select('data')
+                    .eq('id', 'primary_state')
+                    .single();
+
                 if (!error && data) {
                     this.data = data.data;
                     console.log('Data loaded from Supabase');
                     localStorage.setItem('rpa_portal_data', JSON.stringify(this.data));
-                } else if (!this.state.user) {
-                    // If not admin and fetch failed, use local cache
-                    console.log('Supabase fetch failed or empty, using local cache');
-                    this.loadLocalData();
                 } else {
+                    if (error) console.error('Supabase fetch error:', error);
                     this.loadLocalData();
                 }
             } else {
